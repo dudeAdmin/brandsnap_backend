@@ -1,0 +1,84 @@
+# ---------------------------------------------------------------------------------------
+# A. Project/Build Artifacts
+# ---------------------------------------------------------------------------------------
+
+# Compiled Class files
+# Target/Build folders for Maven and Gradle
+/target/
+/build/
+
+# Package Files (JARs, WARs)
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Log Files
+*.log
+logs/
+
+# Optional: Maven Wrapper
+# Uncomment if you don't want to commit the wrapper files
+# .mvn/wrapper/maven-wrapper.jar
+
+# ---------------------------------------------------------------------------------------
+# B. IDE and Environment Files (IntelliJ, VS Code, Eclipse, etc.)
+# ---------------------------------------------------------------------------------------
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# ---------------------------------------------------------------------------------------
+# C. Operating System Files
+# ---------------------------------------------------------------------------------------
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# macOS
+.DS_Store
+
+# ---------------------------------------------------------------------------------------
+# D. Dependency Management and Configuration
+# ---------------------------------------------------------------------------------------
+
+# Maven (if using)
+pom.xml.versionsBackup
+pom.xml.tag
+pom.xml.releaseBackup
+release.properties
+dependency-reduced-pom.xml
+
+# Gradle (if using)
+.gradle
+!/gradle/wrapper/gradle-wrapper.jar  # Keep the wrapper JAR if committing the wrapper
+/classes
+/resources
+# Specific to some setups
+**/src/main/**/build/
+
+# ---------------------------------------------------------------------------------------
+# E. Sensitive/Generated Files
+# ---------------------------------------------------------------------------------------
+
+# Local configuration files that should not be committed
+# Use environment variables or non-versioned config for sensitive data!
+application*.yml.local
+application*.properties.local
+*.properties.local
+*.env

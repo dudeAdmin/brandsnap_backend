@@ -33,4 +33,10 @@ public class ProjectService {
         return projectRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Project not found"));
     }
+
+    public void deleteProject(Long id) {
+        Project project = projectRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Project not found"));
+        projectRepository.delete(project);
+    }
 }

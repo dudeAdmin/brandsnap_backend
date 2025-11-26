@@ -33,4 +33,10 @@ public class CampaignService {
         return campaignRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Campaign not found"));
     }
+
+    public void deleteCampaign(Long id) {
+        Campaign campaign = campaignRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Campaign not found"));
+        campaignRepository.delete(campaign);
+    }
 }

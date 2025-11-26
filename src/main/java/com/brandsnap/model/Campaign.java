@@ -22,4 +22,8 @@ public class Campaign {
     @OneToMany(mappedBy = "campaign", cascade = CascadeType.ALL, orphanRemoval = true)
     @com.fasterxml.jackson.annotation.JsonIgnore
     private List<Asset> assets;
+
+    public int getAssetCount() {
+        return assets != null ? assets.size() : 0;
+    }
 }

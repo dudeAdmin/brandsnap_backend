@@ -29,4 +29,10 @@ public class ProjectController {
     public ResponseEntity<Project> getProject(@PathVariable Long id) {
         return ResponseEntity.ok(projectService.getProjectById(id));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
+        projectService.deleteProject(id);
+        return ResponseEntity.noContent().build();
+    }
 }

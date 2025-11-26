@@ -29,4 +29,10 @@ public class CampaignController {
     public ResponseEntity<Campaign> getCampaign(@PathVariable Long id) {
         return ResponseEntity.ok(campaignService.getCampaignById(id));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCampaign(@PathVariable Long id) {
+        campaignService.deleteCampaign(id);
+        return ResponseEntity.noContent().build();
+    }
 }

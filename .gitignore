@@ -82,3 +82,4 @@ application*.yml.local
 application*.properties.local
 *.properties.local
 *.env
+*.env.example

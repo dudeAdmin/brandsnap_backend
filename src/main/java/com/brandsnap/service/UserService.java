@@ -16,9 +16,21 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
     public User registerUser(User user) {
+        // Validate username uniqueness
         if (userRepository.existsByUsername(user.getUsername())) {
             throw new RuntimeException("Username already exists");
         }
+
+        // Validate email uniqueness
+        if (userRepository.existsByEmail(user.getEmail())) {
+            throw new RuntimeException("Email already exists");
+        }
+
+        // Set default provider if not set
+        if (user.getProvider() == null) {
+            user.setProvider(User.AuthProvider.LOCAL);
+        }
+
         // Encode password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);

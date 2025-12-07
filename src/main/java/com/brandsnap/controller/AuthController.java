@@ -58,12 +58,8 @@ public class AuthController {
                     .map(item -> item.getAuthority())
                     .collect(Collectors.toList());
 
-            // Get user ID from database (optional, if needed in response)
-            // For now we'll use a placeholder or fetch it if UserDetails has it
-            // Assuming CustomUserDetails implements UserDetails and has getId()
-            // If not, we might need to fetch user again or cast if possible.
-            // For simplicity, let's fetch the user to get the ID.
-            User user = userService.loginUser(username, password).orElseThrow();
+            // Get user from database - authentication already succeeded above
+            User user = userService.findByUsername(username).orElseThrow();
 
             return ResponseEntity.ok(new JwtResponse(jwt,
                     user.getId(),
